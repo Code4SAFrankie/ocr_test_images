@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tesseract JS</title>
+  <meta name="description" content="A test of Tesseract JS.">
+  <meta name="author" content="Francois Loubser">
+  <script src='https://raw.githubusercontent.com/Code4SAFrankie/ocr_test_images/main/tesseract.min.js'></script>
+</head>
+<body>
+  <!-- A comment -->
+  <script>
+    Tesseract.recognize(
+      "https://github.com/Code4SAFrankie/ocr_test_images/blob/main/za_syb548t.jpg",
+      "eng",
+      {
+        logger: (m) => console.log(m),
+      }
+    ).then((text) => {
+      console.log("get text", text.text);
+    });
+  </script>
+</body>
+</html>
